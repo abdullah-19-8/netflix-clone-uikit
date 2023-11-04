@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8741928E2AF5FE3C00FA0422 /* HeroHeadeUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8741928D2AF5FE3C00FA0422 /* HeroHeadeUIView.swift */; };
 		8754D4EB2AF3FCDC006B79E8 /* CollectionViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8754D4EA2AF3FCDC006B79E8 /* CollectionViewTableViewCell.swift */; };
 		875945402AEAB4BF00290A0A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8759453F2AEAB4BF00290A0A /* HomeViewController.swift */; };
 		875945422AEAB4EC00290A0A /* UpcomingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875945412AEAB4EC00290A0A /* UpcomingViewController.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8741928D2AF5FE3C00FA0422 /* HeroHeadeUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroHeadeUIView.swift; sourceTree = "<group>"; };
 		8754D4EA2AF3FCDC006B79E8 /* CollectionViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewTableViewCell.swift; sourceTree = "<group>"; };
 		8759453F2AEAB4BF00290A0A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		875945412AEAB4EC00290A0A /* UpcomingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingViewController.swift; sourceTree = "<group>"; };
@@ -49,6 +51,7 @@
 			isa = PBXGroup;
 			children = (
 				8754D4EA2AF3FCDC006B79E8 /* CollectionViewTableViewCell.swift */,
+				8741928D2AF5FE3C00FA0422 /* HeroHeadeUIView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -202,6 +205,7 @@
 				8754D4EB2AF3FCDC006B79E8 /* CollectionViewTableViewCell.swift in Sources */,
 				875945462AEAB54800290A0A /* DownloadsViewController.swift in Sources */,
 				87FCEA2A2ADC7FAE00D0489D /* AppDelegate.swift in Sources */,
+				8741928E2AF5FE3C00FA0422 /* HeroHeadeUIView.swift in Sources */,
 				87FCEA2C2ADC7FAE00D0489D /* SceneDelegate.swift in Sources */,
 				875945422AEAB4EC00290A0A /* UpcomingViewController.swift in Sources */,
 				875945402AEAB4BF00290A0A /* HomeViewController.swift in Sources */,
