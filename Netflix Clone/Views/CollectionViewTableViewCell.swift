@@ -52,10 +52,7 @@ extension CollectionViewTableViewCell: UICollectionViewDelegate, UICollectionVie
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TitleCollectionViewCell.indetifier, for: indexPath) as? TitleCollectionViewCell else{
             return UICollectionViewCell()
         }
-        guard let model = titles[indexPath.row].poster_path else{
-            return UICollectionViewCell()
-        }
-        cell.configure(with: titles[indexPath.row].poster_path!)
+        cell.configure(with: titles[indexPath.row].poster_path ?? "")
         return cell
     }
     
