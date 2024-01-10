@@ -90,9 +90,33 @@ extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 140
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        let title = titles[indexPath.row]
+        
+        guard let titleName = title.original_name ?? title.original_title else {
+            return
+        }
+        
+        APICaller.shared.getMovie(with: titleName) { [weak self]result in
+            switch result {
+            case .success(let videoElement):
+                DispatchQueue.main.async {
+                    let vc = TitlePreviewViewController()
+                    vc.configure(with: TitlePreviewViewModel(title: titleName, youtubeView: videoElement, titleOverview: title.overview ?? ""))
+                    self?.navigationController?.pushViewController(vc, animated: true)
+                }
+                
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
 }
 
-extension SearchViewController: UISearchResultsUpdating {
+extension SearchViewController: UISearchResultsUpdating, SearchResultViewControllerDelegate {
     
     func updateSearchResults(for searchController: UISearchController) {
         let searchBar = searchController.searchBar
@@ -104,6 +128,8 @@ extension SearchViewController: UISearchResultsUpdating {
             return
         }
         
+        resultsController.delegate = self
+        
         APICaller.shared.search(with: query) { result in
             DispatchQueue.main.async {
                 switch result {
@@ -114,6 +140,14 @@ extension SearchViewController: UISearchResultsUpdating {
                     print(error.localizedDescription)
                 }
             }
+        }
+    }
+    
+    func searchResultViewControllerDidTapItem(_ viewModel: TitlePreviewViewModel) {
+        DispatchQueue.main.async { [weak self] in
+            let vc = TitlePreviewViewController()
+            vc.configure(with: viewModel)
+            self?.navigationController?.pushViewController(vc, animated: true)
         }
     }
 }
